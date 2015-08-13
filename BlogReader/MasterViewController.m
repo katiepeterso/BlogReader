@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.titlesArray = [NSArray arrayWithObjects:@"Betting Against Myself", @"A Race and a Not-so-Fun Run", @"How to Travel Like a Spy", @"Winning Friends", @"From Living in Hell to Hiking There", @"Summer Goals", nil];
+    self.titlesArray = [NSArray arrayWithObjects:@"Betting Against Myself", @"A Race and a Not-so-Fun Run", @"How to Travel Like a Spy", @"Winning Friends", @"From Living in Hell to Hiking There", @"Summer Goals", @"Katie's Meadery", @"Going Home as a Visitor", @"Hackfort - A Review", @"Truth Time - The Real Reason We Moved", @"Daydreaming About Summer Vacation", @"Calgary Makes Me Sick!", @"Step One - An Update", @"Podcast Roundup", @"Ethiopian Cooking Minus Exotic Ingredients", @"Winter Hiking - Not as Bad an Idea as You Might Think", @"Chinook Days", @"Running in a Winter Wonderland", @"The HTML One", @"Can He Afford Me Living Here?", nil];
 
 }
 
@@ -30,9 +30,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        NSDate *object = self.objects[indexPath.row];
-//        [[segue destinationViewController] setDetailItem:object];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSString *title = self.titlesArray[indexPath.row];
+        [[segue destinationViewController] setDetailItem:title];
     }
 }
 
